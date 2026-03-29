@@ -1,0 +1,15 @@
+<mat-toolbar class="toolbar" color="primary">
+
+  <span>Angular Meals</span>
+
+  <div class="links">
+
+    <button color="secondary" mat-button *ngFor="let link of navbarLinks" [routerLink]="link.url" routerLinkActive
+      #rla="routerLinkActive" [color]="rla.isActive ? 'accent' : undefined">
+      <mat-icon> {{link.icon}} </mat-icon>
+      {{ link.label }}
+    </button>
+
+  </div>
+
+</mat-toolbar>

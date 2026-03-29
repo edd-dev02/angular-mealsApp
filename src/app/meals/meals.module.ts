@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MealsRoutingModule } from './meals-routing.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     CommonModule,
     RouterModule,
     MealsRoutingModule,
+    SharedModule,
   ]
 })
 export class MealsModule { }

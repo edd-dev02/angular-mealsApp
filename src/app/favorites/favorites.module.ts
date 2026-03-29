@@ -5,6 +5,8 @@ import { FavoritesRoutingModule } from './favorites-routing.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,6 +18,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule,
     FavoritesRoutingModule,
+    SharedModule
   ]
 })
 export class FavoritesModule { }
