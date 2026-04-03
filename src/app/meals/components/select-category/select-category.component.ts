@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MealsService } from '../../services/meals.service';
 import { Category } from '../../interfaces/categories.interface';
@@ -15,6 +15,10 @@ export class SelectCategoryComponent implements OnInit{
   public categories: Category[] = [];
 
   public meals: Meal[] = [];
+
+  // Mandar la lista de comidas al componente padre
+  @Output()
+  public onMealsList: EventEmitter<Meal[]> = new EventEmitter();
 
   constructor( private fb: FormBuilder, private mealsService: MealsService ) {}
 
@@ -47,9 +51,20 @@ export class SelectCategoryComponent implements OnInit{
       .subscribe( meals => {
 
         this.meals = meals;
-        console.log( this.meals );
+
+        this.emitMealsList();
 
       } )
+
+  }
+
+  public emitMealsList(): void {
+
+    if (this.meals.length === 0) return;
+
+    this.onMealsList.emit(this.meals);
+
+    this.meals = [];
 
   }
 

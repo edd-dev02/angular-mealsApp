@@ -9,13 +9,15 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { SelectCategoryComponent } from './components/select-category/select-category.component';
+import { MealCardComponent } from './components/meal-card/meal-card.component';
 
 
 @NgModule({
   declarations: [
     LayoutPageComponent,
     MainPageComponent,
-    SelectCategoryComponent
+    SelectCategoryComponent,
+    MealCardComponent
   ],
   imports: [
     CommonModule,
