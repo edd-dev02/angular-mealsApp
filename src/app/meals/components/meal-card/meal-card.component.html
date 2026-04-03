@@ -1,0 +1,24 @@
+<div class="container__material-card">
+
+  <mat-card class="material-card" *ngFor="let meal of meals">
+
+    <mat-card-header>
+
+      <div class="image-container">
+        <img mat-card-image [src]="meal?.strMealThumb" [alt]="meal?.strMeal">
+      </div>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <mat-card-title> {{ meal?.strMeal }} </mat-card-title>
+
+    </mat-card-content>
+
+    <mat-card-actions class="container__card-button">
+      <button class="card-button" mat-flat-button color="warn">Ver receta</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

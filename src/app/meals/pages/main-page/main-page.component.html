@@ -1,12 +1,9 @@
 <main class="container px-8 mt-3">
 
-<!--Selección de categorias-->
-<meals-select-category (onMealsList)="getMealsList($event)" ></meals-select-category>
+  <!--Selección de categorias-->
+  <meals-select-category (onMealsList)="getMealsList($event)"></meals-select-category>
 
-<!--Listado de recetas-->
-<ul>
-  <li *ngFor="let meal of mealsList" > {{ meal.strMeal }} </li>
-</ul>
-
+  <!--Listado de recetas-->
+  <meals-meal-cards [meals]="mealsList"></meals-meal-cards>
 
 </main>

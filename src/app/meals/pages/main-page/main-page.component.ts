@@ -4,7 +4,15 @@ import { Meal } from '../../interfaces/meal.interface';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styles: ``
+  styles: `
+
+    .container {
+        width: 95%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+  `
 })
 export class MainPageComponent {
 
