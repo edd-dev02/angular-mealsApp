@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { Category, CategoryResults } from '../interfaces/categories.interface';
+import { Meal, MealsResponse } from '../interfaces/meal.interface';
 
 @Injectable({providedIn: 'root'})
 export class MealsService {
@@ -18,6 +19,17 @@ export class MealsService {
       .pipe(
         map( categories => categories.categories),
       );
+  }
+
+  getMealsByCategory(category: string): Observable<Meal[]> {
+
+    const url: string = `${this.baseUrl}/filter.php?c=${category}`;
+
+    return this.http.get<MealsResponse>(url)
+      .pipe(
+        map( meals => meals.meals ),
+      );
+
   }
 
 }
