@@ -9,9 +9,7 @@
 
           <mat-select formControlName="category">
 
-            <!--
-            <mat-option *ngFor="let category of categories"> {{}} </mat-option>
-            -->
+            <mat-option *ngFor="let category of categories" [value]="category.idCategory"> {{ category.strCategory }} </mat-option>
 
           </mat-select>
         </mat-form-field>
@@ -20,3 +18,4 @@
       </mat-card-content>
     </div>
   </mat-card>
+
