@@ -17,7 +17,7 @@
     </mat-card-content>
 
     <mat-card-actions class="container__card-button">
-      <button class="card-button" mat-flat-button color="warn">Ver receta</button>
+      <button (click)="getMealDetail( meal.idMeal)" class="card-button" mat-flat-button color="warn">Ver receta</button>
     </mat-card-actions>
 
   </mat-card>
