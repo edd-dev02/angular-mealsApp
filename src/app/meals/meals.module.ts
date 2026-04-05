@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { SelectCategoryComponent } from './components/select-category/select-category.component';
 import { MealCardComponent } from './components/meal-card/meal-card.component';
+import { DetailMealDialogComponent } from './components/detail-meal-dialog/detail-meal-dialog.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MealCardComponent } from './components/meal-card/meal-card.component';
     LayoutPageComponent,
     MainPageComponent,
     SelectCategoryComponent,
-    MealCardComponent
+    MealCardComponent,
+    DetailMealDialogComponent
   ],
   imports: [
     CommonModule,

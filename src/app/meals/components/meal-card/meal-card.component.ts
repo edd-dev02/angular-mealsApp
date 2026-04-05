@@ -3,6 +3,8 @@ import { Meal } from '../../interfaces/meal.interface';
 import { MealsService } from '../../services/meals.service';
 import { MealDetail, MealDetailModel } from '../../interfaces/meal-detail.interface';
 import { tap } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailMealDialogComponent } from '../detail-meal-dialog/detail-meal-dialog.component';
 
 @Component({
   selector: 'meals-meal-cards',
@@ -17,19 +19,19 @@ export class MealCardComponent {
 
   public mealDetail?: MealDetailModel;
 
-  constructor( private mealsService: MealsService ) {}
+  constructor( private mealsService: MealsService, public dialog: MatDialog ) {}
 
-  getMealDetail(id: string): void {
+  openDialog( id: string ) {
 
     this.mealsService.getMealDetail(id)
-      .pipe(
-        tap( meal => console.log(meal) ),
-      )
-      .subscribe( meal => {
+      .subscribe(meal => {
 
-        this.mealDetail = meal;
+      this.dialog.open(DetailMealDialogComponent, {
+        data: meal,
+        maxWidth: "400px",
+      });
 
-      })
+    });
 
   }
 

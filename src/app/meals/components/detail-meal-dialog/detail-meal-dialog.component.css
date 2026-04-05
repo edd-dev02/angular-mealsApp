@@ -1,0 +1,8 @@
+.actions-container {
+  display: flex;
+}
+
+.card-subtitle {
+  margin: 0;
+  font-weight: 500;
+}

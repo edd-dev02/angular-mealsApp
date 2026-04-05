@@ -1,0 +1,50 @@
+<mat-dialog-content class="mat-typography">
+
+  <header class="flex justify-content-between">
+    <h2> {{data.name}} </h2>
+
+    <button class="header-button" mat-icon-button color="warn" aria-label="Close button" [mat-dialog-close]="true">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </header>
+
+  <mat-divider></mat-divider>
+
+  <div class="image-container my-3">
+    <img [src]="data.image" [alt]="data.name">
+  </div>
+
+  <h3 class="card-subtitle">Ingredientes y cantidades: </h3>
+  <mat-list>
+    <mat-list-item *ngFor="let ingredient of data.ingredients">
+      <span matListItemTitle>{{ingredient.name}}</span>
+      <span matListItemLine>{{ingredient.measure}}</span>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-divider></mat-divider>
+
+  <h3 class="card-subtitle mt-3">Instrucciones: </h3>
+
+  <p>
+    {{ data.instructions }}
+  </p>
+
+
+</mat-dialog-content>
+
+<mat-divider></mat-divider>
+
+<mat-dialog-actions class="mt-3" align="end">
+
+  <div class="actions-container">
+    <button class="actions-button" mat-button mat-dialog-close color="warn">Cancelar</button>
+
+    <button class="actions-button" mat-button [mat-dialog-close]="true" cdkFocusInitial color="primary">
+      <mat-icon>favorite</mat-icon>
+      Agregar a favoritos
+    </button>
+
+  </div>
+
+</mat-dialog-actions>
