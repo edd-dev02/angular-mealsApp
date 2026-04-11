@@ -7,6 +7,7 @@ import { RecipesPageComponent } from './pages/recipes-page/recipes-page.componen
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { MealsModule } from '../meals/meals.module';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     FavoritesRoutingModule,
-    SharedModule
+    SharedModule,
+    MealsModule,
+    MaterialModule,
   ]
 })
 export class FavoritesModule { }

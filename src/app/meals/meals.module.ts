@@ -29,6 +29,9 @@ import { DetailMealDialogComponent } from './components/detail-meal-dialog/detai
     SharedModule,
     MaterialModule,
 
+  ],
+  exports: [
+    MealCardComponent
   ]
 })
 export class MealsModule { }
