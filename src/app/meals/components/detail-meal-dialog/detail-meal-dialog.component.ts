@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Meal } from '../../interfaces/meal.interface';
 import { MealsService } from '../../services/meals.service';
 import { map } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'meals-detail-meal-dialog',
@@ -17,7 +18,11 @@ export class DetailMealDialogComponent {
 
   public idMeal: string = "";
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: MealDetailModel, private mealsService: MealsService) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: MealDetailModel,
+    private mealsService: MealsService,
+    private snackBar: MatSnackBar
+  ) { }
 
   /*
   ngOnInit(): void {
@@ -38,6 +43,8 @@ export class DetailMealDialogComponent {
 
     this.mealsService.saveMealInLocalStorage(meal);
 
+    this.openSnackBar("Receta añadida a favoritos");
+
   }
 
   /*
@@ -57,6 +64,16 @@ export class DetailMealDialogComponent {
 
     this.mealsService.deleteMealFromLocalStorage(id);
 
+    this.openSnackBar("Receta eliminada de favoritos");
+
+  }
+
+  public openSnackBar(message: string) {
+    this.snackBar.open(message, "Ok", {
+      duration: 3000,
+      horizontalPosition: "end",
+      verticalPosition: "top"
+    })
   }
 
 }
